@@ -13,6 +13,10 @@ os.makedirs(output_folder, exist_ok=True)
 cap = cv2.VideoCapture(video_path)
 frame_count = 0
 
+# Detect frame rate (FPS)
+fps = cap.get(cv2.CAP_PROP_FPS)
+print(f"Detected frame rate: {fps:.2f} FPS")
+
 while cap.isOpened():
     ret, frame = cap.read()
 
